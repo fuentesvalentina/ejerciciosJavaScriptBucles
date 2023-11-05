@@ -4,20 +4,21 @@ y columnas y escriba una tabla. Dentro de cada una
   en orden descendente. Si, por ejemplo, la tabla es de 
   7×5 los números irán del 35 al 1. */
 
-const fila = parseInt(prompt('Ingrese una cantidad de filas'));
-const columnas = parseInt(prompt('Ingrese una cantidad de columnas'));
+const fila = parseInt(prompt("Ingrese una cantidad de filas"));
+const columnas = parseInt(prompt("Ingrese una cantidad de columnas"));
 
-const totalCeldas = fila * columnas;
+let totalCeldas = fila * columnas;
 
-document.write(` <table> <tbody>`)
+document.write(` <table> <tbody>`);
 
-for(let indiceFilas = 0; indiceFilas < fila; indiceFilas++){
-    document.write(
-        `<tr>
-           <td>1</td>
-         </tr>`
-    )
+for (let indiceFilas = 0; indiceFilas < fila; indiceFilas++) {
+  document.write(`<tr>`);
+  for (let indiceColumnas = 0; indiceColumnas < columnas; indiceColumnas++) {
+    document.write(`<td>${totalCeldas}</td>`);
+    // totalCeldas--;
+    totalCeldas = totalCeldas - 1;
+  }
+  document.write(`</tr>`);
 }
 
-
-document.write(`</tbody></table>`)
+document.write(`</tbody></table>`);
